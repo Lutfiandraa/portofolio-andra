@@ -16,11 +16,11 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative">
           {/* Logo */}
           <h1 className="text-lg md:text-xl font-semibold text-blue-400">
-            Andra Industries
+            Lutfiandra Pohan
           </h1>
 
-          {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-8 text-sm md:text-base font-medium">
+          {/* Desktop Menu - dipusatkan */}
+          <ul className="hidden md:flex space-x-8 text-sm md:text-base font-medium mx-auto">
             <li>
               <a href="#home" className="hover:text-indigo-400 transition-colors">
                 Home
@@ -28,7 +28,7 @@ function App() {
             </li>
             <li>
               <a href="#competency" className="hover:text-indigo-400 transition-colors">
-                Competency
+                Project
               </a>
             </li>
             <li>
@@ -42,15 +42,6 @@ function App() {
               </a>
             </li>
           </ul>
-
-          {/* Profile Circle */}
-          <div className="hidden md:block w-10 h-10 rounded-full overflow-hidden ring-2 ring-gray-700 hover:ring-indigo-400 cursor-pointer">
-            <img 
-              src="/img/profile.jpg" 
-              alt="Profile" 
-              className="w-full h-full object-cover"
-            />
-          </div>
 
           {/* Hamburger Button */}
           <button

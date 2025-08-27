@@ -31,7 +31,7 @@ const Contact = () => {
       >
         <h2 className="text-3xl font-semibold text-white mb-3">Let's Collaborate!</h2>
         <p className="text-gray-300 text-sm mb-6">
-          Get in touch via form or social links below. Let's have a conversation!
+          Get in touch via form or social media below. Let's have a conversation!
         </p>
 
         {/* 📧 Form Section with Smooth Transition */}
@@ -75,7 +75,7 @@ const Contact = () => {
           viewport={{ once: false, amount: 0.3 }}
         >
           <a
-            href="https://linkedin.com/in/yourlinkedin"
+            href="https://www.linkedin.com/in/lutfiandra-pohan-6b7706289/"
             target="_blank"
             rel="noopener noreferrer"
             className="px-3 py-2 bg-white/10 rounded-full text-gray-300 hover:text-white hover:bg-white/20 text-lg transition-colors flex items-center gap-2"
@@ -83,7 +83,7 @@ const Contact = () => {
             <FaLinkedin /> <span className="text-xs">LinkedIn</span>
           </a>
           <a
-            href="https://instagram.com/yourinstagram"
+            href="https://www.instagram.com/lutfiandrra/"
             target="_blank"
             rel="noopener noreferrer"
             className="px-3 py-2 bg-white/10 rounded-full text-gray-300 hover:text-white hover:bg-white/20 text-lg transition-colors flex items-center gap-2"
