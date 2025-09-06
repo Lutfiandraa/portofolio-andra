@@ -90,7 +90,7 @@ function App() {
                 className="block hover:text-indigo-400 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Competency
+                Project
               </a>
               <a
                 href="#experience"

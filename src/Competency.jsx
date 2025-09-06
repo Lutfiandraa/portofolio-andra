@@ -26,7 +26,7 @@ const competencies = [
   },
   { 
     title: "Deep Learning", 
-    description: "Brebes weather Predictions with Long Short-Term Memory Methods.", 
+    description: "Brebes Temperature Predictions with Long Short-Term Memory Methods.", 
     icons: [
       <img 
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
@@ -35,7 +35,7 @@ const competencies = [
       />
     ], 
     images: ["/img/suhu.png", "/img/brebes.png"],
-    link: "https://github.com/yourusername/deep-learning"
+    link: "https://github.com/Lutfiandraa/LongShort-TermMemory"
   },
   { 
     title: "Incoming Project", 
