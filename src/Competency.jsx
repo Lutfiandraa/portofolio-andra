@@ -12,7 +12,7 @@ const competencies = [
       <SiDart style={{ color: "#02569B", fontSize: "1.5rem" }} />,
     ],
     images: ["/img/Iphone.jpg", "/img/Iphone2.jpg"],
-    link: "https://github.com/Lutfiandraa/pawon-app"
+    link: "https://github.com/Lutfiandraa/Pawon-main"
   },
   { 
     title: "Portal Berita", 
