@@ -44,7 +44,7 @@ const competencies = [
       <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
     ], 
     images: ["/img/Gerobar.png", "/img/banner.png"],
-    link: "https://www.instagram.com/gerobar_id?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+    link: "https://gerobar-umkm.vercel.app/"
   },
 ];
 
