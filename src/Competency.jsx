@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { SiDart, SiFlutter, SiJavascript, SiReact } from "react-icons/si";
+import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs } from "react-icons/si";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // ⬅️ tambahan
 
 const competencies = [
   {
     title: "Pawon App",
-    description: "Mobile Applications with Flutter, Dart & Supabase Integrated.",
+    description: "Back-end Mobile Applications with Flutter, Dart & Supabase Integrated.",
     icons: [
       <SiFlutter style={{ color: "#02569B", fontSize: "1.5rem" }} />,
       <SiDart style={{ color: "#02569B", fontSize: "1.5rem" }} />,
@@ -16,7 +16,7 @@ const competencies = [
   },
   { 
     title: "Portal Berita", 
-    description: "Commercial New's Letter Web based for PT. Winnicode Garuda. (Maintenance & Under Monitoring) ", 
+    description: "Commercial New's Letter Web based for PT. Winnicode Garuda. (Maintenance API control) ", 
     icons: [
       <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
       <SiJavascript style={{ color: "#E7F527", fontSize: "1.5rem" }} />,
@@ -38,10 +38,10 @@ const competencies = [
     link: "https://github.com/Lutfiandraa/LongShort-TermMemory"
   },
   { 
-    title: "Incoming Project", 
+    title: "On Going Project", 
     description: "Digitalize Mid Micro Business Toasted Bread Gerobar.", 
     icons: [
-      <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
+      <SiVuedotjs style={{ color: "#3cb371", fontSize: "1.5rem" }} />,
     ], 
     images: ["/img/Gerobar.png", "/img/banner.png"],
     link: "https://gerobar-umkm.vercel.app/"
