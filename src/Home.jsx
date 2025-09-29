@@ -1,6 +1,6 @@
 import React from "react";
 import TypedText from "./component/TypedText";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 function Home() {
@@ -63,6 +63,16 @@ function Home() {
         >
           <FaEnvelope />
         </a>
+        <a
+          href="/CuriculumVitae_Lutfiandra%20Pohan.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-300 hover:text-gray-500 text-2xl flex items-center gap-2"
+          >
+          <FaDownload />
+          <span></span>
+        </a>
+
       </motion.div>
 
       {/* Typed Text */}
