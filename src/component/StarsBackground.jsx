@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 
 const StarsBackground = () => {
   // Generate bintang dengan posisi dan delay yang berbeda (dikurangi jumlahnya)
-  const stars = Array.from({ length: 80 }, (_, i) => ({
-    id: i,
-    top: `${Math.random() * 100}%`,
-    left: `${Math.random() * 100}%`,
-    delay: Math.random() * 3,
-    duration: 3 + Math.random() * 4, // 3-7 detik (lebih cepat)
-    size: Math.random() * 2 + 1, // 1-3px
-  }));
+  // useMemo untuk mencegah regenerasi pada setiap render
+  const stars = useMemo(() => {
+    return Array.from({ length: 80 }, (_, i) => ({
+      id: i,
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      delay: Math.random() * 5,
+      duration: 8 + Math.random() * 10, // 8-18 detik (lebih lambat)
+      size: Math.random() * 3 + 2, // 2-5px
+    }));
+  }, []);
 
   return (
     <motion.div 

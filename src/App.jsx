@@ -79,7 +79,7 @@ function App() {
         }}
         style={{ pointerEvents: isNavbarVisible ? 'auto' : 'none' }}
       >
-        <div className="max-w-5xl mx-auto bg-white/10 backdrop-blur-md rounded-[70px] px-6 py-4 flex items-center justify-between relative border border-white/20">
+        <div className="max-w-5xl mx-auto bg-white/8 backdrop-blur-md rounded-[70px] px-6 py-4 flex items-center justify-between relative border border-white/20">
           {/* Logo */}
           <h1 className="text-lg md:text-xl font-semibold text-blue-400">
             Lutfiandra Pohan
@@ -88,22 +88,22 @@ function App() {
           {/* Desktop Menu - dipusatkan */}
           <ul className="hidden md:flex space-x-8 text-sm md:text-base font-medium mx-auto">
             <li>
-              <a href="#home" className="hover:text-indigo-400 transition-colors">
+              <a href="#home" className="nav-link-glow">
                 Home
               </a>
             </li>
             <li>
-              <a href="#competency" className="hover:text-indigo-400 transition-colors">
+              <a href="#competency" className="nav-link-glow">
                 Project
               </a>
             </li>
             <li>
-              <a href="#experience" className="hover:text-indigo-400 transition-colors">
+              <a href="#experience" className="nav-link-glow">
                 Experience
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-indigo-400 transition-colors">
+              <a href="#contact" className="nav-link-glow">
                 Contact
               </a>
             </li>
@@ -142,32 +142,32 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="md:hidden bg-white/10 backdrop-blur-md rounded-[70px] px-6 py-4 space-y-4 mt-2 border border-white/20"
+              className="md:hidden bg-white/8 backdrop-blur-md rounded-[70px] px-6 py-4 space-y-4 mt-2 border border-white/20"
             >
               <a
                 href="#home"
-                className="block hover:text-indigo-400 transition-colors"
+                className="block nav-link-glow"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </a>
               <a
                 href="#competency"
-                className="block hover:text-indigo-400 transition-colors"
+                className="block nav-link-glow"
                 onClick={() => setIsOpen(false)}
               >
                 Project
               </a>
               <a
                 href="#experience"
-                className="block hover:text-indigo-400 transition-colors"
+                className="block nav-link-glow"
                 onClick={() => setIsOpen(false)}
               >
                 Experience
               </a>
               <a
                 href="#contact"
-                className="block hover:text-indigo-400 transition-colors"
+                className="block nav-link-glow"
                 onClick={() => setIsOpen(false)}
               >
                 Contact

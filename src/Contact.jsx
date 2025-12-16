@@ -8,19 +8,6 @@ const Contact = () => {
       id="contact"
       className="relative min-h-screen flex items-center justify-center bg-black/80 overflow-hidden px-6 z-10"
     >
-      {/* 🔵 Animated Background Blobs */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                      w-[280px] h-[280px] bg-blue-500 rounded-full mix-blend-screen 
-                      filter blur-3xl opacity-30 animate-move1"></div>
-
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                      w-[240px] h-[240px] bg-cyan-400 rounded-full mix-blend-screen 
-                      filter blur-3xl opacity-20 animate-move2"></div>
-
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                      w-[200px] h-[200px] bg-indigo-500 rounded-full mix-blend-screen 
-                      filter blur-3xl opacity-25 animate-move3"></div>
-
       {/* 📨 Contact Card with Smooth Transition */}
       <motion.div
         className="relative z-10 bg-white/5 backdrop-blur-md rounded-2xl p-8 max-w-xl w-full shadow-lg text-center border border-white/10"

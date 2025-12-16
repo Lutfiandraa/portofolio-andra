@@ -7,6 +7,7 @@ export default function Experience() {
     { title: "Fullstack Developer", place: "Winnicode Garuda Tech (Internship).", date: "May 2025 - August 2025", desc: "Architectural Design and Implementation of a Web-Based News Portal System with Integrated News API Services." },
     { title: "Mobile App Back-end Developer", place: "Esa Unggul University (Academic)", date: "January 2025", desc: "Logic side & Data Structure with Supabase data API management." },
     { title: "Training as Backend Integration feature", place: "Solvera Global Teknologi (Training).", date: "20 November 2025 - 20 Desember 2025", desc: "Create design data model & integrating feature, new knowledge with SQLAlchemy Python library that provides SQL and Object Relational Mapping features for database PostgreSQL access." },
+    { title: "Software Quality Assurance", place: "Esa Unggul (Academic)", date: "December 2025", desc: "Unit Testing with Jest from Javascript & Blackbox Testing on Report & Statistic System web based for Safety Officer" },
   ];
 
   return (
@@ -34,7 +35,7 @@ export default function Experience() {
           {experiences.map((exp, idx) => (
             <motion.div
               key={idx}
-              className="bg-gray-800/70 border border-gray-700 rounded-2xl p-5 shadow-lg hover:shadow-blue-500/20 transition-all"
+              className="bg-white/8 backdrop-blur-md border border-white/20 rounded-2xl p-5 shadow-lg hover:shadow-blue-500/20 transition-all"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: idx * 0.15 }}
@@ -46,7 +47,7 @@ export default function Experience() {
                   {idx + 1}
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-semibold text-indigo-300">{exp.title}</h3>
+                  <h3 className="text-lg md:text-xl font-semibold text-blue-400">{exp.title}</h3>
                   <p className="text-sm text-gray-400">
                     {exp.place} · {exp.date}
                   </p>

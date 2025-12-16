@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs, SiAngular, SiTypescript, SiNextdotjs } from "react-icons/si";
+import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs, SiAngular, SiTypescript, SiNextdotjs, SiNodedotjs } from "react-icons/si";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // ⬅️ tambahan
 
 const competencies = [
@@ -67,6 +67,21 @@ const competencies = [
     images: ["/img/charcoaldefault.jpg", "/img/OOCLshipping.jpg"],
     link: "https://royalmerchant.vercel.app/"
   },
+  {
+    title: "Report & Statistic System",
+    description: "Design & Implementation Report System for Safety Officer work area (In Progress)",
+    icons: [
+      <SiNodedotjs style={{ color: "#339933", fontSize: "1.5rem" }} />,
+      <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
+      <img 
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" 
+        alt="Jest" 
+        style={{ width: "30px", height: "30px" }}
+      />,
+    ],
+    images: ["/img/safetybackground.png", "/img/workplace-safety-priority.jpg"],
+    link: "#"
+  },
 ];
 
 const Competency = () => {
@@ -75,15 +90,6 @@ const Competency = () => {
       id="competency"
       className="relative min-h-screen flex items-center justify-center bg-black/80 overflow-hidden px-6 py-20 z-10"
     >
-      {/* 🔵 Background effect */}
-      <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 
-                      h-[1px] bg-gradient-to-r from-transparent via-indigo-700/40 to-transparent 
-                      pointer-events-none"></div>
-
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                      w-[200px] h-[200px] bg-blue-500 rounded-full mix-blend-screen 
-                      filter blur-3xl opacity-25 animate-move1"></div>
-
       {/* Konten */}
       <div className="relative z-10 container mx-auto">
         {/* Judul */}
@@ -124,7 +130,7 @@ const Card = ({ comp, index }) => {
   return (
     <motion.div
       className="relative group p-6 rounded-2xl shadow-lg 
-                 bg-white/5 backdrop-blur-md border border-white/10 flex flex-col"
+                 bg-white/8 backdrop-blur-md border border-white/20 flex flex-col"
       initial={{ opacity: 0, y: 40, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 1, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
@@ -141,6 +147,10 @@ const Card = ({ comp, index }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
+          onError={(e) => {
+            console.error(`Image not found: ${comp.images[current]}`);
+            e.target.style.display = 'none';
+          }}
         />
         <div className="absolute inset-0 bg-black/20"></div>
 
@@ -171,7 +181,7 @@ const Card = ({ comp, index }) => {
 
       {/* Judul */}
       <motion.h3
-        className="text-lg md:text-xl font-semibold text-indigo-300 mb-2"
+        className="text-lg md:text-xl font-semibold text-blue-400 mb-2"
         whileHover={{ color: "#60A5FA" }}
         transition={{ duration: 0.3 }}
       >
@@ -199,7 +209,7 @@ const Card = ({ comp, index }) => {
           href={comp.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-indigo-400 hover:text-indigo-300 transition"
+          className="text-blue-400 hover:text-blue-300 transition"
         >
           🔗
         </a>

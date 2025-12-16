@@ -16,6 +16,19 @@ body {
   overflow-x: hidden;
 }
 
+/* ✨ White Glow Effect for Navbar */
+.nav-link-glow {
+  color: white;
+  transition: text-shadow 0.3s ease;
+}
+
+.nav-link-glow:hover {
+  text-shadow: 
+    0 0 4px rgba(255, 255, 255, 0.8),
+    0 0 8px rgba(255, 255, 255, 0.5),
+    0 0 12px rgba(255, 255, 255, 0.3);
+}
+
 /* ⭐ Animasi Morphing Bintang */
 @keyframes starTwinkle {
   0%, 100% {
@@ -30,47 +43,42 @@ body {
 
 @keyframes starMorph {
   0% {
-    opacity: 0.7;
-    transform: translate(0, 0) scale(1);
-    filter: brightness(1.2);
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
   25% {
-    opacity: 0.9;
-    transform: translate(8px, -8px) scale(1.05);
-    filter: brightness(1.5);
+    opacity: 1;
+    transform: translate3d(6px, -6px, 0) scale(1.03);
   }
   50% {
     opacity: 1;
-    transform: translate(-4px, 4px) scale(1.1);
-    filter: brightness(1.8);
+    transform: translate3d(-3px, 3px, 0) scale(1.05);
   }
   75% {
-    opacity: 0.9;
-    transform: translate(4px, 8px) scale(1.05);
-    filter: brightness(1.5);
+    opacity: 1;
+    transform: translate3d(3px, 6px, 0) scale(1.03);
   }
   100% {
-    opacity: 0.7;
-    transform: translate(0, 0) scale(1);
-    filter: brightness(1.2);
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
 @keyframes starDrift {
   0% {
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
   }
   25% {
-    transform: translate(15px, -12px);
+    transform: translate3d(10px, -8px, 0);
   }
   50% {
-    transform: translate(-8px, 15px);
+    transform: translate3d(-5px, 10px, 0);
   }
   75% {
-    transform: translate(12px, 8px);
+    transform: translate3d(8px, 5px, 0);
   }
   100% {
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -78,38 +86,11 @@ body {
   animation: starMorph ease-in-out infinite, starDrift linear infinite;
   background: #ffffff !important;
   box-shadow: 
-    0 0 3px rgba(255, 255, 255, 0.9),
-    0 0 6px rgba(255, 255, 255, 0.7),
-    0 0 10px rgba(255, 255, 255, 0.5),
-    0 0 15px rgba(255, 255, 255, 0.3);
-  filter: brightness(1.5) drop-shadow(0 0 2px rgba(255, 255, 255, 0.6));
-}
-
-/* 🔵 Animasi background blob glowing (lebih kecil + lebih cepat) */
-@keyframes move1 {
-  0%, 100% { transform: translate(-5%, -5%) scale(1); }
-  50% { transform: translate(8%, 8%) scale(1.08); }
-}
-
-@keyframes move2 {
-  0%, 100% { transform: translate(6%, -6%) scale(1); }
-  50% { transform: translate(-6%, 6%) scale(1.1); }
-}
-
-@keyframes move3 {
-  0%, 100% { transform: translate(-5%, 6%) scale(1); }
-  50% { transform: translate(6%, -5%) scale(1.12); }
-}
-
-/* ⏩ Durasi dipercepat */
-.animate-move1 {
-  animation: move1 6s ease-in-out infinite alternate;
-}
-
-.animate-move2 {
-  animation: move2 8s ease-in-out infinite alternate;
-}
-
-.animate-move3 {
-  animation: move3 10s ease-in-out infinite alternate;
+    0 0 5px rgba(255, 255, 255, 1),
+    0 0 10px rgba(255, 255, 255, 0.9),
+    0 0 15px rgba(255, 255, 255, 0.7),
+    0 0 25px rgba(255, 255, 255, 0.5);
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
