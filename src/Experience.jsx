@@ -5,7 +5,8 @@ export default function Experience() {
   const experiences = [
     { title: "Machine Learning Engineer", place: "Esa Unggul University (Academic).", date: "April 2025 - July 2025", desc: "Brebes Weather Prediction method with Deep Learning & Long Short-Term Memory" },
     { title: "Fullstack Developer", place: "Winnicode Garuda Tech (Internship).", date: "May 2025 - August 2025", desc: "Architectural Design and Implementation of a Web-Based News Portal System with Integrated News API Services." },
-    { title: "Mobile App Back-end Developer", place: "Esa Unggul University (Academic)", date: "Janury 2025", desc: "Logic side & Data Structure with Supabase data API management." },
+    { title: "Mobile App Back-end Developer", place: "Esa Unggul University (Academic)", date: "January 2025", desc: "Logic side & Data Structure with Supabase data API management." },
+    { title: "Training as Backend Integration feature", place: "Solvera Global Teknologi (Training).", date: "20 November 2025 - 20 Desember 2025", desc: "Create design data model & integrating feature, new knowledge with SQLAlchemy Python library that provides SQL and Object Relational Mapping features for database PostgreSQL access." },
   ];
 
   return (
