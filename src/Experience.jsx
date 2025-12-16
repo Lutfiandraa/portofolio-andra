@@ -9,7 +9,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-black text-gray-100">
+    <section id="experience" className="py-20 bg-black/80 text-gray-100 relative z-10">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         
         {/* Judul dengan transisi smooth */}
@@ -17,8 +17,8 @@ export default function Experience() {
           className="md:col-span-1 text-center md:text-left"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-blue-400 mb-4">
             Hall of Lutfiandra’s Experience
@@ -36,8 +36,8 @@ export default function Experience() {
               className="bg-gray-800/70 border border-gray-700 rounded-2xl p-5 shadow-lg hover:shadow-blue-500/20 transition-all"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.2 }}
-              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: idx * 0.15 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <div className="flex items-start space-x-4">
                 {/* FIX Lingkaran biar tidak oval */}

@@ -7,7 +7,7 @@ function Home() {
   return (
     <section
       id="home"
-      className="flex flex-col items-center justify-center min-h-screen bg-black text-slate-200"
+      className="flex flex-col items-center justify-center min-h-screen bg-black/80 text-slate-200 relative z-10"
     >
       {/* Foto Profil */}
       <motion.div
@@ -21,8 +21,8 @@ function Home() {
         "
         initial={{ opacity: 0, scale: 0.9, y: 30 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <img
           src="/img/circle.png"
@@ -36,8 +36,8 @@ function Home() {
         className="flex space-x-6 mt-6"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
       >
         <a
           href="https://linkedin.com/in/lutfiandra-pohan-6b7706289"
@@ -80,8 +80,8 @@ function Home() {
         className="mt-6"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
       >
         <TypedText
           strings={[
@@ -95,8 +95,8 @@ function Home() {
         className="max-w-2xl text-slate-300 leading-relaxed mt-4 text-lg text-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
       >
         I am a Computer Science student beginner with a strong passion for
         learning and technology development. I continuously enhance my skills

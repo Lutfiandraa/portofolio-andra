@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden px-6"
+      className="relative min-h-screen flex items-center justify-center bg-black/80 overflow-hidden px-6 z-10"
     >
       {/* 🔵 Animated Background Blobs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
@@ -26,8 +26,8 @@ const Contact = () => {
         className="relative z-10 bg-white/5 backdrop-blur-md rounded-2xl p-8 max-w-xl w-full shadow-lg text-center border border-white/10"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <h2 className="text-3xl font-semibold text-white mb-3">Let's Collaborate!</h2>
         <p className="text-gray-300 text-sm mb-6">
@@ -39,8 +39,8 @@ const Contact = () => {
           className="space-y-3 mb-6 text-left"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          transition={{ delay: 0.2, duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <div>
             <label className="block text-gray-400 text-xs mb-1">Email</label>
@@ -71,8 +71,8 @@ const Contact = () => {
           className="flex justify-center gap-4 mt-4"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          transition={{ delay: 0.4, duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <a
             href="https://www.linkedin.com/in/lutfiandra-pohan-6b7706289/"

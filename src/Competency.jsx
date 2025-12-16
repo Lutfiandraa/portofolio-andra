@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs } from "react-icons/si";
+import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs, SiAngular, SiTypescript, SiNextdotjs } from "react-icons/si";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // ⬅️ tambahan
 
 const competencies = [
@@ -46,13 +46,34 @@ const competencies = [
     images: ["/img/Gerobar.png", "/img/banner.png"],
     link: "https://gerobar-umkm.vercel.app/"
   },
+  {
+    title: "Key-In",
+    description: "an Pariwisata, Online Booking Destination website with framework Angular.js and Typescript library react for responsive ui",
+    icons: [
+      <SiAngular style={{ color: "#DD0031", fontSize: "1.5rem" }} />,
+      <SiTypescript style={{ color: "#3178C6", fontSize: "1.5rem" }} />,
+    ],
+    images: ["/img/kerinaiko.png", "/img/manhattan.png"],
+    link: "https://keyin-pariwisata.vercel.app/"
+  },
+  {
+    title: "Royal Merchant",
+    description: "Website to aim a trusted global partner by delivering reliable supply, exceptional service, and charcoal products",
+    icons: [
+      <SiNextdotjs style={{ color: "#ffffff", fontSize: "1.5rem" }} />,
+      <SiTypescript style={{ color: "#3178C6", fontSize: "1.5rem" }} />,
+      <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
+    ],
+    images: ["/img/charcoaldefault.jpg", "/img/OOCLshipping.jpg"],
+    link: "https://royalmerchant.vercel.app/"
+  },
 ];
 
 const Competency = () => {
   return (
     <section
       id="competency"
-      className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden px-6 py-20"
+      className="relative min-h-screen flex items-center justify-center bg-black/80 overflow-hidden px-6 py-20 z-10"
     >
       {/* 🔵 Background effect */}
       <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 
@@ -70,8 +91,8 @@ const Competency = () => {
           className="text-center mb-12"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-blue-400 mb-4">
             Project
@@ -106,8 +127,8 @@ const Card = ({ comp, index }) => {
                  bg-white/5 backdrop-blur-md border border-white/10 flex flex-col"
       initial={{ opacity: 0, y: 40, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 1, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+      viewport={{ once: true, amount: 0.2 }}
       whileHover={{ y: -8, scale: 1.03 }}
     >
       {/* Slider Gambar */}

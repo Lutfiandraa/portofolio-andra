@@ -2,6 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🎬 Smooth Page Load Animation */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ⭐ Animasi Morphing Bintang */
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes starMorph {
+  0% {
+    opacity: 0.7;
+    transform: translate(0, 0) scale(1);
+    filter: brightness(1.2);
+  }
+  25% {
+    opacity: 0.9;
+    transform: translate(8px, -8px) scale(1.05);
+    filter: brightness(1.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-4px, 4px) scale(1.1);
+    filter: brightness(1.8);
+  }
+  75% {
+    opacity: 0.9;
+    transform: translate(4px, 8px) scale(1.05);
+    filter: brightness(1.5);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translate(0, 0) scale(1);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes starDrift {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(15px, -12px);
+  }
+  50% {
+    transform: translate(-8px, 15px);
+  }
+  75% {
+    transform: translate(12px, 8px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.star-morph {
+  animation: starMorph ease-in-out infinite, starDrift linear infinite;
+  background: #ffffff !important;
+  box-shadow: 
+    0 0 3px rgba(255, 255, 255, 0.9),
+    0 0 6px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 15px rgba(255, 255, 255, 0.3);
+  filter: brightness(1.5) drop-shadow(0 0 2px rgba(255, 255, 255, 0.6));
+}
+
 /* 🔵 Animasi background blob glowing (lebih kecil + lebih cepat) */
 @keyframes move1 {
   0%, 100% { transform: translate(-5%, -5%) scale(1); }
