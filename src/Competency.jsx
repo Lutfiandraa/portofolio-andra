@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs, SiAngular, SiTypescript, SiNextdotjs, SiNodedotjs } from "react-icons/si";
+import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs, SiAngular, SiTypescript, SiNextdotjs, SiNodedotjs, SiGatsby } from "react-icons/si";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // ⬅️ tambahan
 
 const competencies = [
@@ -81,6 +81,17 @@ const competencies = [
     ],
     images: ["/img/safetybackground.png", "/img/workplace-safety-priority.jpg"],
     link: "#"
+  },
+  {
+    title: "Start Up IT Consultant (Coming Soon)",
+    description: "Karta Jati Integrasi is an IT consulting firm committed to delivering digital transformation solutions for companies and micro businesses, helping them leverage technology to improve efficiency and sustainable growth.",
+    icons: [
+      <SiGatsby style={{ color: "#663399", fontSize: "1.5rem" }} />,
+      <SiTypescript style={{ color: "#3178C6", fontSize: "1.5rem" }} />,
+      <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
+    ],
+    images: ["/img/Kartajati.png", "/img/whatwedo.png"],
+    link: "https://karta-jati.vercel.app/"
   },
 ];
 
