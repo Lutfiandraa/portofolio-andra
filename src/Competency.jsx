@@ -68,8 +68,8 @@ const competencies = [
     link: "https://royalmerchant.vercel.app/"
   },
   {
-    title: "Report & Statistic System",
-    description: "Design & Implementation Report System for Safety Officer work area (In Progress)",
+    title: "Education & Report System",
+    description: "Design Implementation Education & Report for HSE",
     icons: [
       <SiNodedotjs style={{ color: "#339933", fontSize: "1.5rem" }} />,
       <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
@@ -80,7 +80,7 @@ const competencies = [
       />,
     ],
     images: ["/img/safetybackground.png", "/img/workplace-safety-priority.jpg"],
-    link: "#"
+    link: "https://sistem-kesehatan-dan-kesalamatan-ke.vercel.app/"
   },
   {
     title: "Start Up IT Consultant (Coming Soon)",
