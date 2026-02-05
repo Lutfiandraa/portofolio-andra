@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs, SiAngular, SiTypescript, SiNextdotjs, SiNodedotjs, SiGatsby } from "react-icons/si";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // ⬅️ tambahan
+import { FaPaperPlane, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const competencies = [
   {
     title: "Pawon App",
-    description: "Back-end Mobile Applications with Flutter, Dart & Supabase Integrated.",
+    description: "Develop Back-end Mobile Applications with Flutter, Dart & Supabase Integrated.",
     icons: [
       <SiFlutter style={{ color: "#02569B", fontSize: "1.5rem" }} />,
       <SiDart style={{ color: "#02569B", fontSize: "1.5rem" }} />,
@@ -15,14 +16,15 @@ const competencies = [
     link: "https://github.com/Lutfiandraa/Pawon-main"
   },
   { 
-    title: "Portal Berita", 
-    description: "Commercial New's Letter Web based for PT. Winnicode Garuda. (Maintenance API control) ", 
+    title: "Garuda Tribune", 
+    description: "New's Letter Web based integrated with NewsAPI for PT. Winnicode Garuda. (Maintenance API control)", 
     icons: [
       <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
       <SiJavascript style={{ color: "#E7F527", fontSize: "1.5rem" }} />,
     ], 
     images: ["/img/Berita.png", "/img/Laptop.jpg"],
-    link: "https://portal-berita-px6z.vercel.app/"
+    link: "https://portal-berita-px6z.vercel.app/",
+    linkedin: "https://www.linkedin.com/company/winnicodegarudateknologi/posts/?feedView=all"
   },
   { 
     title: "Deep Learning", 
@@ -44,7 +46,8 @@ const competencies = [
       <SiVuedotjs style={{ color: "#3cb371", fontSize: "1.5rem" }} />,
     ], 
     images: ["/img/Gerobar.png", "/img/banner.png"],
-    link: "https://gerobar-umkm.vercel.app/"
+    link: "https://gerobar-umkm.vercel.app/",
+    instagram: "https://www.instagram.com/gerobar_id/"
   },
   {
     title: "Key-In",
@@ -216,14 +219,39 @@ const Card = ({ comp, index }) => {
           ))}
         </div>
 
-        <a
-          href={comp.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-400 hover:text-blue-300 transition"
-        >
-          🔗
-        </a>
+        <div className="flex items-center gap-2">
+          {comp.linkedin && (
+            <a
+              href={comp.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-8 h-8 text-blue-400 hover:text-blue-300 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-colors"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="text-sm" />
+            </a>
+          )}
+          {comp.instagram && (
+            <a
+              href={comp.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-8 h-8 text-pink-400 hover:text-pink-300 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-colors"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="text-sm" />
+            </a>
+          )}
+          <a
+            href={comp.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-blue-400 hover:text-blue-300 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-colors"
+          >
+            <FaPaperPlane className="text-sm" />
+            Visit
+          </a>
+        </div>
       </motion.div>
     </motion.div>
   );

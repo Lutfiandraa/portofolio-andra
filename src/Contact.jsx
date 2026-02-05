@@ -38,7 +38,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-400 text-xs mb-1">Komentar</label>
+            <label className="block text-gray-400 text-xs mb-1">Comment</label>
             <textarea
               rows="3"
               placeholder="Write your message..."
