@@ -8,7 +8,7 @@ export default function Experience() {
 
   const experiences = [
     { title: "Machine Learning Engineer", place: "Esa Unggul University (Academic).", date: "April 2025 - July 2025", desc: "Brebes Weather Prediction method with Deep Learning & Long Short-Term Memory" },
-    { title: "Fullstack Developer", place: "Winnicode Garuda Tech (Internship).", date: "May 2025 - August 2025", desc: "Architectural Design and Implementation of a Web-Based News Portal System with Integrated News API Services.", certificateImage: "/img/sertifikatmagang.png" },
+    { title: "Fullstack Developer", place: "Winnicode Garuda Tech (Internship).", date: "May 2025 - August 2025", desc: "Architectural Design and Implementation of a Web-Based News Portal System with Integrated News API Services.", certificateImage: `${process.env.PUBLIC_URL || ""}/img/sertifikatmagang.png` },
     { title: "Mobile App Back-end Developer", place: "Esa Unggul University (Academic)", date: "January 2025", desc: "Logic side & Data Structure with Supabase data API management." },
     { title: "Training as Backend Integration feature", place: "Solvera Global Teknologi (Training).", date: "20 November 2025 - 20 Desember 2025", desc: "Create design data model & integrating feature, new knowledge with SQLAlchemy Python library that provides SQL and Object Relational Mapping features for database PostgreSQL access." },
     { title: "Software Quality Assurance", place: "Esa Unggul (Academic)", date: "December 2025", desc: "Unit Testing with Jest from Javascript & Blackbox Testing on Report & Statistic System web based for Safety Officer" },
@@ -101,7 +101,7 @@ export default function Experience() {
                 <IoMdClose className="text-2xl" />
               </button>
               <img
-                src="/img/sertifikatmagang.png"
+                src={`${process.env.PUBLIC_URL || ""}/img/sertifikatmagang.png`}
                 alt="Sertifikat Magang"
                 className="max-w-full max-h-[70vh] w-auto h-auto object-contain rounded-lg shadow-2xl"
               />
