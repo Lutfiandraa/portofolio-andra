@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs, SiAngular, SiTypescript, SiNextdotjs, SiNodedotjs, SiGatsby } from "react-icons/si";
+import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs, SiAngular, SiTypescript, SiNextdotjs, SiNodedotjs, SiGatsby, SiAstro } from "react-icons/si";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // ⬅️ tambahan
 import { FaPaperPlane, FaInstagram, FaLinkedin } from "react-icons/fa";
 
@@ -96,6 +96,17 @@ const competencies = [
     images: ["/img/Kartajati.png", "/img/whatwedo.png"],
     link: "https://karta-jati.vercel.app/"
   },
+  {
+    title: "Cakranegara Heavy Rent",
+    description: "Cakranegara Heavy Rent for help ur Business Equipment",
+    icons: [
+      <SiAstro style={{ color: "#FF5D01", fontSize: "1.5rem" }} />,
+      <SiTypescript style={{ color: "#3178C6", fontSize: "1.5rem" }} />,
+      <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
+    ],
+    images: ["/img/excapillar.png"],
+    link: "https://cakranegara-equipment.vercel.app/"
+  },
 ];
 
 const Competency = () => {
@@ -133,6 +144,7 @@ const Competency = () => {
 
 const Card = ({ comp, index }) => {
   const [current, setCurrent] = useState(0);
+  const hasImages = comp.images && comp.images.length > 0;
 
   const nextImage = () =>
     setCurrent((prev) => (prev + 1) % comp.images.length);
@@ -151,25 +163,33 @@ const Card = ({ comp, index }) => {
       viewport={{ once: true, amount: 0.2 }}
       whileHover={{ y: -8, scale: 1.03 }}
     >
-      {/* Slider Gambar */}
+      {/* Slider Gambar / Placeholder jika kosong */}
       <div className="relative mb-4 overflow-hidden rounded-xl">
-        <motion.img
-          key={current}
-          src={comp.images[current]}
-          alt={comp.title}
-          className="h-28 w-full object-cover opacity-60"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          onError={(e) => {
-            console.error(`Image not found: ${comp.images[current]}`);
-            e.target.style.display = 'none';
-          }}
-        />
-        <div className="absolute inset-0 bg-black/20"></div>
+        {hasImages ? (
+          <>
+            <motion.img
+              key={current}
+              src={comp.images[current]}
+              alt={comp.title}
+              className="h-28 w-full object-cover opacity-60"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              onError={(e) => {
+                console.error(`Image not found: ${comp.images[current]}`);
+                e.target.style.display = 'none';
+              }}
+            />
+            <div className="absolute inset-0 bg-black/20"></div>
+          </>
+        ) : (
+          <div className="h-28 w-full bg-white/10 rounded-xl flex items-center justify-center border border-white/10">
+            <span className="text-white/30 text-xs">No image</span>
+          </div>
+        )}
 
         {/* Tombol navigasi kiri/kanan */}
-        {comp.images.length > 1 && (
+        {hasImages && comp.images.length > 1 && (
           <>
             <button
               onClick={prevImage}
