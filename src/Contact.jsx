@@ -109,7 +109,7 @@ const Contact = () => {
               {messages.length <= 1 ? (
                 <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 min-h-[200px]">
                   <p className="text-gray-400 text-sm text-center">
-                    Ketik pertanyaan Anda di bawah.
+                    Write your message to F.R.I.D.A.Y
                   </p>
                 </div>
               ) : (
@@ -149,7 +149,7 @@ const Contact = () => {
                   onKeyDown={(e) =>
                     e.key === "Enter" && !e.shiftKey && sendMessage(inputValue)
                   }
-                  placeholder="Enter your message pal"
+                  placeholder="Enter your message"
                   className="flex-1 rounded-l-xl bg-white/10 px-4 py-2.5 text-sm text-white placeholder:text-gray-400 focus:outline-none"
                 />
                 <button
