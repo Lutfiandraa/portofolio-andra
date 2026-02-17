@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCertificate } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
 export default function Experience() {
   const [certificateOpen, setCertificateOpen] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://platform.linkedin.com/badges/js/profile.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const experiences = [
     { title: "Machine Learning Engineer", place: "Esa Unggul University (Academic).", date: "April 2025 - July 2025", desc: "Brebes Weather Prediction method with Deep Learning & Long Short-Term Memory" },
@@ -18,20 +29,29 @@ export default function Experience() {
     <section id="experience" className="py-20 bg-black/80 text-gray-100 relative z-10">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         
-        {/* Judul dengan transisi smooth */}
+        {/* LinkedIn Profile Badge */}
         <motion.div
-          className="md:col-span-1 text-center md:text-left"
+          className="md:col-span-1 flex justify-center md:justify-start"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-400 mb-4">
-            Hall of Lutfiandra’s Experience
-          </h2>
-          <p className="text-gray-400">
-            Personal Development, Academic & Non-Academic Growth
-          </p>
+          <div
+            className="badge-base LI-profile-badge"
+            data-locale="en_US"
+            data-size="large"
+            data-theme="dark"
+            data-type="HORIZONTAL"
+            data-vanity="lutfiandra-pohan-6b7706289"
+            data-version="v1"
+          >
+            <a
+              className="badge-base__link LI-simple-link"
+              href="https://id.linkedin.com/in/lutfiandra-pohan-6b7706289?trk=profile-badge"
+              aria-label="Lutfiandra Pohan LinkedIn Profile"
+            />
+          </div>
         </motion.div>
 
         {/* Card Experience dengan transisi smooth */}
