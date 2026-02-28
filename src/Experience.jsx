@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCertificate } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
@@ -6,52 +6,28 @@ import { IoMdClose } from "react-icons/io";
 export default function Experience() {
   const [certificateOpen, setCertificateOpen] = useState(false);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://platform.linkedin.com/badges/js/profile.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   const experiences = [
-    { title: "Machine Learning Engineer", place: "Esa Unggul University (Academic).", date: "April 2025 - July 2025", desc: "Brebes Weather Prediction method with Deep Learning & Long Short-Term Memory" },
+    { title: "Data Scientist", place: "Esa Unggul University", date: "April 2025 - July 2025", desc: "Brebes Weather Prediction method with Deep Learning & Long Short-Term Memory" },
     { title: "Fullstack Developer", place: "Winnicode Garuda Tech (Internship).", date: "May 2025 - August 2025", desc: "Architectural Design and Implementation of a Web-Based News Portal System with Integrated News API Services.", certificateImage: `${process.env.PUBLIC_URL || ""}/img/sertifikatmagang.png` },
     { title: "Mobile App Back-end Developer", place: "Esa Unggul University (Academic)", date: "January 2025", desc: "Logic side & Data Structure with Supabase data API management." },
     { title: "Training as Backend Integration feature", place: "Solvera Global Teknologi (Training).", date: "20 November 2025 - 20 Desember 2025", desc: "Create design data model & integrating feature, new knowledge with SQLAlchemy Python library that provides SQL and Object Relational Mapping features for database PostgreSQL access." },
     { title: "Software Quality Assurance", place: "Esa Unggul (Academic)", date: "December 2025", desc: "Unit Testing with Jest from Javascript & Blackbox Testing on Report & Statistic System web based for Safety Officer" },
+    { title: "Data Scientist", place: "Esa Unggul University (Final-year Project)", date: "September 2025 - Present", desc: "Comparison Long Short-Term Memory with Informer (Transformer simplified model) in Stock Prediction" },
   ];
 
   return (
     <section id="experience" className="py-20 bg-black/80 text-gray-100 relative z-10">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         
-        {/* LinkedIn Profile Badge */}
+        {/* Experience title */}
         <motion.div
-          className="md:col-span-1 flex justify-center md:justify-start"
+          className="md:col-span-1 flex justify-center md:justify-end md:pr-2"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div
-            className="badge-base LI-profile-badge"
-            data-locale="en_US"
-            data-size="large"
-            data-theme="dark"
-            data-type="HORIZONTAL"
-            data-vanity="lutfiandra-pohan-6b7706289"
-            data-version="v1"
-          >
-            <a
-              className="badge-base__link LI-simple-link"
-              href="https://id.linkedin.com/in/lutfiandra-pohan-6b7706289?trk=profile-badge"
-              aria-label="Lutfiandra Pohan LinkedIn Profile"
-            />
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-400 tracking-wide">Experience</h2>
         </motion.div>
 
         {/* Card Experience dengan transisi smooth */}

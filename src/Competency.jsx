@@ -28,7 +28,7 @@ const competencies = [
   },
   { 
     title: "Deep Learning", 
-    description: "Brebes Temperature Predictions with Long Short-Term Memory Methods.", 
+    description: "Brebes Regency temperature forecasting with Long Short-Term Memory model & GUI Tkinter.", 
     icons: [
       <img 
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
@@ -36,11 +36,11 @@ const competencies = [
         style={{ width: "30px", height: "30px" }}
       />
     ], 
-    images: ["/img/suhu.png", "/img/brebes.png"],
+    images: ["/img/suhu.png", "/img/architecturelstm.png"],
     link: "https://github.com/Lutfiandraa/LongShort-TermMemory"
   },
   { 
-    title: "On Going Project", 
+    title: "Gerobar", 
     description: "Digitalize Mid Micro Business Toasted Bread Gerobar.", 
     icons: [
       <SiVuedotjs style={{ color: "#3cb371", fontSize: "1.5rem" }} />,
@@ -110,6 +110,19 @@ const competencies = [
 ];
 
 const Competency = () => {
+  const [activeCategory, setActiveCategory] = useState("web");
+
+  const isDataScienceProject = (project) =>
+    /deep learning|lstm|informer|prediction|python|data scientist/i.test(
+      `${project.title} ${project.description}`
+    );
+
+  const filteredCompetencies = competencies.filter((project) =>
+    activeCategory === "data-science"
+      ? isDataScienceProject(project)
+      : !isDataScienceProject(project)
+  );
+
   return (
     <section
       id="competency"
@@ -128,12 +141,35 @@ const Competency = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-blue-400 mb-4">
             Project
           </h2>
-          <p className="text-gray-400">Highlight</p>
+          <div className="flex items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => setActiveCategory("web")}
+              className={`px-4 py-2 rounded-full border text-sm md:text-base transition-all ${
+                activeCategory === "web"
+                  ? "bg-white/20 text-white border-white/40 shadow-[0_0_18px_rgba(255,255,255,0.22)]"
+                  : "bg-transparent text-white/70 border-white/20 hover:bg-white/5"
+              }`}
+            >
+              Web Development
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveCategory("data-science")}
+              className={`px-4 py-2 rounded-full border text-sm md:text-base transition-all ${
+                activeCategory === "data-science"
+                  ? "bg-white/20 text-white border-white/40 shadow-[0_0_18px_rgba(255,255,255,0.22)]"
+                  : "bg-transparent text-white/70 border-white/20 hover:bg-white/5"
+              }`}
+            >
+              Data Science
+            </button>
+          </div>
         </motion.div>
 
         {/* Card List */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {competencies.map((comp, index) => (
+          {filteredCompetencies.map((comp, index) => (
             <Card key={index} comp={comp} index={index} />
           ))}
         </div>

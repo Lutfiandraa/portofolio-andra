@@ -20,19 +20,19 @@ const EMAIL = "lutfiandrapohann@gmail.com";
 
 function renderBotMessage(text) {
   if (!text.includes(EMAIL)) {
-    return <p className="text-sm leading-relaxed whitespace-pre-wrap">{text}</p>;
+    return <p className="text-sm leading-relaxed whitespace-pre-wrap break-words">{text}</p>;
   }
   const [before, after] = text.split(EMAIL);
   return (
-    <p className="text-sm leading-relaxed whitespace-pre-wrap">
+    <p className="text-sm leading-relaxed whitespace-pre-wrap break-words">
       {before}
-      <span className="inline-flex items-center gap-1">
-        {EMAIL}
+      <span className="inline-flex max-w-full flex-wrap items-center gap-1 align-middle">
+        <span className="break-all">{EMAIL}</span>
         <a
           href={`https://mail.google.com/mail/?view=cm&to=${EMAIL}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex text-blue-400 hover:text-blue-300 transition-colors"
+          className="inline-flex shrink-0 text-blue-400 hover:text-blue-300 transition-colors"
           aria-label="Open Gmail to send email"
         >
           <IoArrowForward className="w-4 h-4" />
@@ -101,15 +101,15 @@ const Contact = () => {
             <div className="shrink-0 flex items-center gap-3 px-4 py-3 border-b border-white/10 bg-white/5">
               <IoPersonCircle className="w-10 h-10 text-blue-500 shrink-0" aria-hidden />
               <div className="min-w-0">
-                <p className="font-semibold text-white truncate">F.R.I.D.A.Y Lutfiandra's Assistant</p>
-                <p className="text-xs text-gray-400 mt-0.5">Ask for Collaborate!</p>
+                <p className="font-semibold text-white truncate">F.R.I.D.A.Y</p>
+                <p className="text-xs text-gray-400 mt-0.5">Lutfiandra's Assistant</p>
               </div>
             </div>
             <div className="flex-1 overflow-y-auto flex flex-col">
               {messages.length <= 1 ? (
                 <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 min-h-[200px]">
                   <p className="text-gray-400 text-sm text-center">
-                    Write your message to F.R.I.D.A.Y
+                    Ask for Collaborate
                   </p>
                 </div>
               ) : (

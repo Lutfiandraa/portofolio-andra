@@ -77,7 +77,7 @@ function Home() {
 
       {/* Typed Text */}
       <motion.div
-        className="mt-6"
+        className="mt-6 w-full flex justify-center text-center px-4"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -85,7 +85,7 @@ function Home() {
       >
         <TypedText
           strings={[
-            `<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-cyan-400 font-bold text-4xl drop-shadow-lg">Hi, I’m Lutfiandra Pohan</span>`,
+            `<span class="block text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-cyan-400 font-bold text-4xl drop-shadow-lg">Hi, I’m Lutfiandra Pohan</span>`,
           ]}
         />
       </motion.div>
@@ -98,8 +98,8 @@ function Home() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
       >
-        I am a Computer Science student beginner with a strong passion for
-        learning and technology development. I continuously enhance my skills
+        I am a Computer Science student, passionate in learning and technology
+        development. I continuously enhance my skills
         both within and beyond the academic environment while expanding my
         professional network to achieve my long-term career goals.
       </motion.p>

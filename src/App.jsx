@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./index.css";
 import Home from "./Home";
+import Capability from "./Capability";
 import Competency from "./Competency";
 import Experience from "./Experience";
 import Contact from "./Contact";
@@ -93,6 +94,11 @@ function App() {
               </a>
             </li>
             <li>
+              <a href="#capability" className="nav-link-glow">
+                Capability
+              </a>
+            </li>
+            <li>
               <a href="#competency" className="nav-link-glow">
                 Project
               </a>
@@ -152,6 +158,13 @@ function App() {
                 Home
               </a>
               <a
+                href="#capability"
+                className="block nav-link-glow"
+                onClick={() => setIsOpen(false)}
+              >
+                Capability
+              </a>
+              <a
                 href="#competency"
                 className="block nav-link-glow"
                 onClick={() => setIsOpen(false)}
@@ -185,6 +198,7 @@ function App() {
         transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 }}
       >
         <Home />
+        <Capability />
         <Competency />
         <Experience />
         <Contact />
