@@ -13,7 +13,7 @@ const BOT_REPLIES = {
   hubungi:
     "Anda dapat menghubungi kami melalui email atau telepon. Tim customer service kami siap melayani pada jam kerja. Terima kasih!",
   default:
-    "Thank you for reaching out to Lutfiandra Pohan. I am F.R.I.D.A.Y, Lutfiandra's assistant. If you do not receive a response within the expected time, please contact Lutfiandra directly at lutfiandrapohann@gmail.com",
+    "Thank you for reaching out to Lutfiandra Pohan. I am F.R.I.D.A.Y, Lutfiandra's assistant. If you do not receive a response within the expected time, please contact Lutfiandra directly at\nlutfiandrapohann@gmail.com",
 };
 
 const EMAIL = "lutfiandrapohann@gmail.com";
@@ -44,12 +44,7 @@ function renderBotMessage(text) {
 }
 
 const Contact = () => {
-  const [messages, setMessages] = useState([
-    {
-      role: "bot",
-      text: "Hi There! do u intrested in collaborate?",
-    },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const chatEndRef = useRef(null);
 
@@ -106,7 +101,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex-1 overflow-y-auto flex flex-col">
-              {messages.length <= 1 ? (
+              {messages.length === 0 ? (
                 <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 min-h-[200px]">
                   <p className="text-gray-400 text-sm text-center">
                     Ask for Collaborate

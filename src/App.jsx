@@ -82,7 +82,7 @@ function App() {
       >
         <div className="max-w-5xl mx-auto bg-white/8 backdrop-blur-md rounded-[70px] px-6 py-4 flex items-center justify-between relative border border-white/20">
           {/* Logo */}
-          <h1 className="text-lg md:text-xl font-semibold text-blue-400">
+          <h1 className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-cyan-400">
             Lutfiandra Pohan
           </h1>
 

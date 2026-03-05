@@ -107,20 +107,43 @@ const competencies = [
     images: ["/img/excapillar.png"],
     link: "https://cakranegara-equipment.vercel.app/"
   },
+  {
+    title: "YOLOv8",
+    description: "Computer Vision for Car Adaptive Collision Warning System",
+    icons: [
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        alt="Python"
+        style={{ width: "30px", height: "30px" }}
+      />,
+    ],
+    images: ["/img/Collision.png", "/img/defender.png"],
+    link: "https://github.com/Lutfiandraa/CollisionWarning-YOLO",
+    category: "computer-vision",
+  },
 ];
 
 const Competency = () => {
   const [activeCategory, setActiveCategory] = useState("web");
 
   const isDataScienceProject = (project) =>
+    project.category === "data-science" ||
     /deep learning|lstm|informer|prediction|python|data scientist/i.test(
+      `${project.title} ${project.description}`
+    );
+
+  const isComputerVisionProject = (project) =>
+    project.category === "computer-vision" ||
+    /computer vision|yolo|collision/i.test(
       `${project.title} ${project.description}`
     );
 
   const filteredCompetencies = competencies.filter((project) =>
     activeCategory === "data-science"
-      ? isDataScienceProject(project)
-      : !isDataScienceProject(project)
+      ? isDataScienceProject(project) && !isComputerVisionProject(project)
+      : activeCategory === "computer-vision"
+      ? isComputerVisionProject(project)
+      : !isDataScienceProject(project) && !isComputerVisionProject(project)
   );
 
   return (
@@ -163,6 +186,17 @@ const Competency = () => {
               }`}
             >
               Data Science
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveCategory("computer-vision")}
+              className={`px-4 py-2 rounded-full border text-sm md:text-base transition-all ${
+                activeCategory === "computer-vision"
+                  ? "bg-white/20 text-white border-white/40 shadow-[0_0_18px_rgba(255,255,255,0.22)]"
+                  : "bg-transparent text-white/70 border-white/20 hover:bg-white/5"
+              }`}
+            >
+              Computer Vision
             </button>
           </div>
         </motion.div>
