@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs, SiAngular, SiTypescript, SiNextdotjs, SiNodedotjs, SiGatsby, SiAstro } from "react-icons/si";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // ⬅️ tambahan
+import { ChevronLeft, ChevronRight, X } from "lucide-react"; // ⬅️ tambahan
 import { FaPaperPlane, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const competencies = [
@@ -15,36 +15,38 @@ const competencies = [
     images: ["/img/Iphone.jpg", "/img/Iphone2.jpg"],
     link: "https://github.com/Lutfiandraa/Pawon-main"
   },
-  { 
-    title: "Garuda Tribune", 
-    description: "New's Letter Web based integrated with NewsAPI for PT. Winnicode Garuda. (Maintenance API control)", 
+  {
+    title: "Garuda Tribune",
+    description: "New's Letter Web based integrated with NewsAPI for PT. Winnicode Garuda. (Maintenance API control)",
     icons: [
       <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
       <SiJavascript style={{ color: "#E7F527", fontSize: "1.5rem" }} />,
-    ], 
+    ],
     images: ["/img/Berita.png", "/img/Laptop.jpg"],
     link: "https://portal-berita-px6z.vercel.app/",
-    linkedin: "https://www.linkedin.com/company/winnicodegarudateknologi/posts/?feedView=all"
+    linkedin: "https://www.linkedin.com/company/winnicodegarudateknologi/posts/?feedView=all",
+    certificateImage: "/img/sertifikatmagang.png",
+    certificateDescription: "Fullstack Developer Winnicode Garuda Tech (Internship). · May 2025 - August 2025\n\nArchitectural Design and Implementation of a Web-Based News Portal System with Integrated News API Services."
   },
-  { 
-    title: "Deep Learning", 
-    description: "Brebes Regency temperature forecasting with Long Short-Term Memory model & GUI Tkinter.", 
+  {
+    title: "Deep Learning",
+    description: "Brebes Regency temperature forecasting with Long Short-Term Memory model & GUI Tkinter.",
     icons: [
-      <img 
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
-        alt="Python" 
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        alt="Python"
         style={{ width: "30px", height: "30px" }}
       />
-    ], 
+    ],
     images: ["/img/suhu.png", "/img/architecturelstm.png"],
     link: "https://github.com/Lutfiandraa/LongShort-TermMemory"
   },
-  { 
-    title: "Gerobar", 
-    description: "Digitalize Mid Micro Business Toasted Bread Gerobar.", 
+  {
+    title: "Gerobar",
+    description: "Digitalize Mid Micro Business Toasted Bread Gerobar.",
     icons: [
       <SiVuedotjs style={{ color: "#3cb371", fontSize: "1.5rem" }} />,
-    ], 
+    ],
     images: ["/img/Gerobar.png", "/img/banner.png"],
     link: "https://gerobar-umkm.vercel.app/",
     instagram: "https://www.instagram.com/gerobar_id/"
@@ -71,14 +73,14 @@ const competencies = [
     link: "https://royalmerchant.vercel.app/"
   },
   {
-    title: "Education & Report System",
-    description: "Design Implementation Education & Report for HSE",
+    title: "Education & Report System for HSE",
+    description: "Design Implementation and Software Quality Assurance",
     icons: [
       <SiNodedotjs style={{ color: "#339933", fontSize: "1.5rem" }} />,
       <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
-      <img 
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" 
-        alt="Jest" 
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg"
+        alt="Jest"
         style={{ width: "30px", height: "30px" }}
       />,
     ],
@@ -98,13 +100,13 @@ const competencies = [
   },
   {
     title: "Cakranegara Heavy Rent",
-    description: "Cakranegara Heavy Rent for help ur Business Equipment",
+    description: "Cakranegara Heavy Rent for help ur Business Equipment with Gemini Studio Chatbot Integrated called 'Mas Cakra-bot' ",
     icons: [
       <SiAstro style={{ color: "#FF5D01", fontSize: "1.5rem" }} />,
       <SiTypescript style={{ color: "#3178C6", fontSize: "1.5rem" }} />,
       <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
     ],
-    images: ["/img/excapillar.png"],
+    images: ["/img/excapillar.png", "/img/cakrabot.png"],
     link: "https://cakranegara-equipment.vercel.app/"
   },
   {
@@ -142,8 +144,8 @@ const Competency = () => {
     activeCategory === "data-science"
       ? isDataScienceProject(project) && !isComputerVisionProject(project)
       : activeCategory === "computer-vision"
-      ? isComputerVisionProject(project)
-      : !isDataScienceProject(project) && !isComputerVisionProject(project)
+        ? isComputerVisionProject(project)
+        : !isDataScienceProject(project) && !isComputerVisionProject(project)
   );
 
   return (
@@ -168,33 +170,30 @@ const Competency = () => {
             <button
               type="button"
               onClick={() => setActiveCategory("web")}
-              className={`px-4 py-2 rounded-full border text-sm md:text-base transition-all ${
-                activeCategory === "web"
-                  ? "bg-white/20 text-white border-white/40 shadow-[0_0_18px_rgba(255,255,255,0.22)]"
-                  : "bg-transparent text-white/70 border-white/20 hover:bg-white/5"
-              }`}
+              className={`px-4 py-2 rounded-full border text-sm md:text-base transition-all ${activeCategory === "web"
+                ? "bg-white/20 text-white border-white/40 shadow-[0_0_18px_rgba(255,255,255,0.22)]"
+                : "bg-transparent text-white/70 border-white/20 hover:bg-white/5"
+                }`}
             >
               Web Development
             </button>
             <button
               type="button"
               onClick={() => setActiveCategory("data-science")}
-              className={`px-4 py-2 rounded-full border text-sm md:text-base transition-all ${
-                activeCategory === "data-science"
-                  ? "bg-white/20 text-white border-white/40 shadow-[0_0_18px_rgba(255,255,255,0.22)]"
-                  : "bg-transparent text-white/70 border-white/20 hover:bg-white/5"
-              }`}
+              className={`px-4 py-2 rounded-full border text-sm md:text-base transition-all ${activeCategory === "data-science"
+                ? "bg-white/20 text-white border-white/40 shadow-[0_0_18px_rgba(255,255,255,0.22)]"
+                : "bg-transparent text-white/70 border-white/20 hover:bg-white/5"
+                }`}
             >
               Data Science
             </button>
             <button
               type="button"
               onClick={() => setActiveCategory("computer-vision")}
-              className={`px-4 py-2 rounded-full border text-sm md:text-base transition-all ${
-                activeCategory === "computer-vision"
-                  ? "bg-white/20 text-white border-white/40 shadow-[0_0_18px_rgba(255,255,255,0.22)]"
-                  : "bg-transparent text-white/70 border-white/20 hover:bg-white/5"
-              }`}
+              className={`px-4 py-2 rounded-full border text-sm md:text-base transition-all ${activeCategory === "computer-vision"
+                ? "bg-white/20 text-white border-white/40 shadow-[0_0_18px_rgba(255,255,255,0.22)]"
+                : "bg-transparent text-white/70 border-white/20 hover:bg-white/5"
+                }`}
             >
               Computer Vision
             </button>
@@ -214,6 +213,7 @@ const Competency = () => {
 
 const Card = ({ comp, index }) => {
   const [current, setCurrent] = useState(0);
+  const [showCertificate, setShowCertificate] = useState(false);
   const hasImages = comp.images && comp.images.length > 0;
 
   const nextImage = () =>
@@ -224,126 +224,183 @@ const Card = ({ comp, index }) => {
     );
 
   return (
-    <motion.div
-      className="relative group p-6 rounded-2xl shadow-lg 
-                 bg-white/8 backdrop-blur-md border border-white/20 flex flex-col"
-      initial={{ opacity: 0, y: 40, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 1, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-      viewport={{ once: true, amount: 0.2 }}
-      whileHover={{ y: -8, scale: 1.03 }}
-    >
-      {/* Slider Gambar / Placeholder jika kosong */}
-      <div className="relative mb-4 overflow-hidden rounded-xl">
-        {hasImages ? (
-          <>
-            <motion.img
-              key={current}
-              src={comp.images[current]}
-              alt={comp.title}
-              className="h-28 w-full object-cover opacity-60"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4 }}
-              onError={(e) => {
-                console.error(`Image not found: ${comp.images[current]}`);
-                e.target.style.display = 'none';
-              }}
-            />
-            <div className="absolute inset-0 bg-black/20"></div>
-          </>
-        ) : (
-          <div className="h-28 w-full bg-white/10 rounded-xl flex items-center justify-center border border-white/10">
-            <span className="text-white/30 text-xs">No image</span>
-          </div>
-        )}
-
-        {/* Tombol navigasi kiri/kanan */}
-        {hasImages && comp.images.length > 1 && (
-          <>
-            <button
-              onClick={prevImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 
-                         bg-black/40 hover:bg-black/60 text-white 
-                         p-2 rounded-full opacity-0 group-hover:opacity-100 
-                         transition-opacity"
-            >
-              <ChevronLeft size={16} />
-            </button>
-            <button
-              onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 
-                         bg-black/40 hover:bg-black/60 text-white 
-                         p-2 rounded-full opacity-0 group-hover:opacity-100 
-                         transition-opacity"
-            >
-              <ChevronRight size={16} />
-            </button>
-          </>
-        )}
-      </div>
-
-      {/* Judul */}
-      <motion.h3
-        className="text-lg md:text-xl font-semibold text-blue-400 mb-2"
-        whileHover={{ color: "#60A5FA" }}
-        transition={{ duration: 0.3 }}
-      >
-        {comp.title}
-      </motion.h3>
-
-      {/* Deskripsi */}
-      <p className="text-sm text-gray-300 leading-relaxed mb-4 flex-grow">
-        {comp.description}
-      </p>
-
-      {/* Ikon + Link */}
+    <>
       <motion.div
-        className="flex items-center justify-between text-xl text-white/90"
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3 }}
+        className="relative group p-6 rounded-2xl shadow-lg 
+                   bg-white/8 backdrop-blur-md border border-white/20 flex flex-col"
+        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 1, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+        viewport={{ once: true, amount: 0.2 }}
+        whileHover={{ y: -8, scale: 1.03 }}
       >
-        <div className="flex space-x-3">
-          {comp.icons.map((icon, i) => (
-            <span key={i}>{icon}</span>
-          ))}
+        {/* Slider Gambar / Placeholder jika kosong */}
+        <div className="relative mb-4 overflow-hidden rounded-xl">
+          {hasImages ? (
+            <>
+              <motion.img
+                key={current}
+                src={comp.images[current]}
+                alt={comp.title}
+                className="h-28 w-full object-cover opacity-60"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+                onError={(e) => {
+                  console.error(`Image not found: ${comp.images[current]}`);
+                  e.target.style.display = 'none';
+                }}
+              />
+              <div className="absolute inset-0 bg-black/20"></div>
+            </>
+          ) : (
+            <div className="h-28 w-full bg-white/10 rounded-xl flex items-center justify-center border border-white/10">
+              <span className="text-white/30 text-xs">No image</span>
+            </div>
+          )}
+
+          {/* Tombol navigasi kiri/kanan */}
+          {hasImages && comp.images.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                className="absolute left-2 top-1/2 -translate-y-1/2 
+                           bg-black/40 hover:bg-black/60 text-white 
+                           p-2 rounded-full opacity-0 group-hover:opacity-100 
+                           transition-opacity"
+              >
+                <ChevronLeft size={16} />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-2 top-1/2 -translate-y-1/2 
+                           bg-black/40 hover:bg-black/60 text-white 
+                           p-2 rounded-full opacity-0 group-hover:opacity-100 
+                           transition-opacity"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </>
+          )}
         </div>
 
-        <div className="flex items-center gap-2">
-          {comp.linkedin && (
-            <a
-              href={comp.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-8 h-8 text-blue-400 hover:text-blue-300 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-colors"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin className="text-sm" />
-            </a>
-          )}
-          {comp.instagram && (
-            <a
-              href={comp.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-8 h-8 text-pink-400 hover:text-pink-300 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-colors"
-              aria-label="Instagram"
-            >
-              <FaInstagram className="text-sm" />
-            </a>
-          )}
-          <a
-            href={comp.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-blue-400 hover:text-blue-300 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-colors"
+        {/* Judul + Sertifikat Button */}
+        <div className="flex items-center justify-between mb-2">
+          <motion.h3
+            className="text-lg md:text-xl font-semibold text-blue-400"
+            whileHover={{ color: "#60A5FA" }}
+            transition={{ duration: 0.3 }}
           >
-            <FaPaperPlane className="text-sm" />
-            Visit
-          </a>
+            {comp.title}
+          </motion.h3>
+          {comp.certificateImage && (
+            <button
+              onClick={() => setShowCertificate(true)}
+              className="px-2 py-1 text-[10px] font-bold text-white bg-white/10 hover:bg-white/20 rounded border border-white/20 transition-colors uppercase tracking-wider"
+            >
+              View
+            </button>
+          )}
         </div>
+
+        {/* Deskripsi */}
+        <p className="text-sm text-gray-300 leading-relaxed mb-4 flex-grow">
+          {comp.description}
+        </p>
+
+        {/* Ikon + Link */}
+        <motion.div
+          className="flex items-center justify-between text-xl text-white/90"
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="flex space-x-3">
+            {comp.icons.map((icon, i) => (
+              <span key={i}>{icon}</span>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2">
+            {comp.linkedin && (
+              <a
+                href={comp.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-8 h-8 text-blue-400 hover:text-blue-300 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-colors"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin className="text-sm" />
+              </a>
+            )}
+            {comp.instagram && (
+              <a
+                href={comp.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-8 h-8 text-pink-400 hover:text-pink-300 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-colors"
+                aria-label="Instagram"
+              >
+                <FaInstagram className="text-sm" />
+              </a>
+            )}
+            <a
+              href={comp.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-blue-400 hover:text-blue-300 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg transition-colors"
+            >
+              <FaPaperPlane className="text-sm" />
+              Visit
+            </a>
+          </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+
+      {/* Modal Sertifikat */}
+      <AnimatePresence>
+        {showCertificate && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+            onClick={() => setShowCertificate(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              className="relative max-w-lg w-full bg-gray-900 border border-white/20 rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setShowCertificate(false)}
+                className="absolute top-4 right-4 p-2 bg-black/40 hover:bg-black/60 text-white rounded-full transition-colors z-10"
+              >
+                <X size={18} />
+              </button>
+
+              <div className="p-1">
+                <img
+                  src={comp.certificateImage}
+                  alt="Certificate"
+                  className="w-full h-auto rounded-t-xl"
+                />
+              </div>
+
+              <div className="p-5">
+                <h4 className="text-lg font-bold text-blue-400 mb-2">
+                  Certificate Details
+                </h4>
+                <p className="text-gray-300 text-[13px] whitespace-pre-wrap leading-relaxed">
+                  {comp.certificateDescription}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
