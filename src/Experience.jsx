@@ -16,7 +16,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-black/80 text-gray-100 relative z-10">
+    <section id="experience" className="py-20 bg-transparent text-gray-100 relative z-10">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         
         {/* Experience title */}
@@ -35,7 +35,7 @@ export default function Experience() {
           {experiences.map((exp, idx) => (
             <motion.div
               key={idx}
-              className="relative bg-white/8 backdrop-blur-md border border-white/20 rounded-2xl p-5 shadow-lg hover:shadow-blue-500/20 transition-all"
+              className="relative bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-5 shadow-lg hover:shadow-blue-500/20 transition-all"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: idx * 0.15 }}

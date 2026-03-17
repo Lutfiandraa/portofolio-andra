@@ -7,7 +7,7 @@ function Home() {
   return (
     <section
       id="home"
-      className="flex flex-col items-center justify-center min-h-screen bg-black/80 text-slate-200 relative z-10"
+      className="flex flex-col items-center justify-center min-h-screen bg-transparent text-slate-200 relative z-10"
     >
       {/* Foto Profil */}
       <motion.div

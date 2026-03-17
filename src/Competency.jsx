@@ -151,7 +151,7 @@ const Competency = () => {
   return (
     <section
       id="competency"
-      className="relative min-h-screen flex items-center justify-center bg-black/80 overflow-hidden px-6 py-20 z-10"
+      className="relative min-h-screen flex items-center justify-center bg-transparent overflow-hidden px-6 py-20 z-10"
     >
       {/* Konten */}
       <div className="relative z-10 container mx-auto">
@@ -227,7 +227,7 @@ const Card = ({ comp, index }) => {
     <>
       <motion.div
         className="relative group p-6 rounded-2xl shadow-lg 
-                   bg-white/8 backdrop-blur-md border border-white/20 flex flex-col"
+                   bg-white/5 backdrop-blur-lg border border-white/10 flex flex-col"
         initial={{ opacity: 0, y: 40, scale: 0.95 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 1, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}

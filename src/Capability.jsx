@@ -66,7 +66,7 @@ export default function Capability() {
   return (
     <section
       id="capability"
-      className="relative min-h-screen flex items-center justify-center bg-black/80 overflow-hidden px-6 py-20 z-10"
+      className="relative min-h-screen flex items-center justify-center bg-transparent overflow-hidden px-6 py-20 z-10"
     >
       <div className="relative z-10 container mx-auto">
         <motion.div
@@ -114,7 +114,7 @@ export default function Capability() {
             return (
               <motion.div
                 key={item.name}
-                className="bg-white/8 backdrop-blur-md border border-white/20 rounded-2xl p-5 text-center shadow-lg hover:shadow-blue-500/20 transition-all"
+                className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-5 text-center shadow-lg hover:shadow-blue-500/20 transition-all"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -124,7 +124,7 @@ export default function Capability() {
                 }}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-full bg-white/10 border border-white/10">
+                <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-full bg-white/5 border border-white/10">
                   {Icon ? (
                     <Icon size={26} style={{ color: item.color }} />
                   ) : (

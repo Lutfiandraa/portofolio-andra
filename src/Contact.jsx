@@ -69,11 +69,11 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative min-h-screen flex items-center justify-center bg-black/80 overflow-hidden px-6 z-10"
+      className="relative min-h-screen flex items-center justify-center bg-transparent overflow-hidden px-6 z-10"
     >
       {/* 📨 Contact Card with Smooth Transition */}
       <motion.div
-        className="relative z-10 bg-white/5 backdrop-blur-md rounded-2xl p-8 max-w-xl w-full shadow-lg text-center border border-white/10"
+        className="relative z-10 bg-white/5 backdrop-blur-lg rounded-2xl p-8 max-w-xl w-full shadow-lg text-center border border-white/10"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}

@@ -6,7 +6,7 @@ import Capability from "./Capability";
 import Competency from "./Competency";
 import Experience from "./Experience";
 import Contact from "./Contact";
-import StarsBackground from "./component/StarsBackground";
+import LightLines from "./component/LightLines";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,14 +53,22 @@ function App() {
   }, [lastScrollY]);
 
   return (
-    <motion.div 
-      className="min-h-screen bg-black text-gray-100 flex flex-col relative"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <LightLines
+      gradientFrom="#000000"
+      gradientTo="#000000"
+      lightColor="#3b82f6"
+      lineColor="#3b82f6"
+      linesOpacity={0.1}
+      lightsOpacity={0.7}
+      speedMultiplier={1.5}
     >
-      {/* Stars Background */}
-      <StarsBackground />
+      <motion.div 
+        className="min-h-screen text-gray-100 flex flex-col relative"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+
       
       {/* Navbar */}
       <motion.nav 
@@ -203,7 +211,8 @@ function App() {
         <Experience />
         <Contact />
       </motion.main>
-    </motion.div>
+      </motion.div>
+    </LightLines>
   );
 }
 
