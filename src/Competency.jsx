@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiDart, SiFlutter, SiJavascript, SiReact, SiVuedotjs, SiAngular, SiTypescript, SiNextdotjs, SiNodedotjs, SiGatsby, SiAstro } from "react-icons/si";
 import { ChevronLeft, ChevronRight, X } from "lucide-react"; // ⬅️ tambahan
-import { FaPaperPlane, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaPaperPlane, FaInstagram, FaLinkedin, FaCertificate } from "react-icons/fa";
 
 const competencies = [
   {
@@ -296,8 +296,9 @@ const Card = ({ comp, index }) => {
           {comp.certificateImage && (
             <button
               onClick={() => setShowCertificate(true)}
-              className="px-2 py-1 text-[10px] font-bold text-white bg-white/10 hover:bg-white/20 rounded border border-white/20 transition-colors uppercase tracking-wider"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:text-slate-200 bg-white/5 hover:bg-white/10 border border-slate-500/50 rounded-lg transition-colors"
             >
+              <FaCertificate className="text-sm" />
               View
             </button>
           )}

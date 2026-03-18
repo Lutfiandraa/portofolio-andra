@@ -20,6 +20,7 @@ import {
   SiSwagger,
   SiPostman,
   SiJest,
+  SiGit,
 } from "react-icons/si";
 
 const capabilityItems = [
@@ -54,6 +55,7 @@ const capabilityItems = [
   { name: "Swagger UI", caption: "Swagger UI", category: "tools", icon: SiSwagger, color: "#85EA2D" },
   { name: "Postman", caption: "Postman", category: "tools", icon: SiPostman, color: "#FF6C37" },
   { name: "Jest", caption: "Unit Testing Jest", category: "tools", icon: SiJest, color: "#C21325" },
+  { name: "Git", caption: "Git", category: "tools", icon: SiGit, color: "#F05032" },
 ];
 
 export default function Capability() {
