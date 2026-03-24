@@ -7,7 +7,7 @@ function Home() {
   return (
     <section
       id="home"
-      className="flex flex-col items-center justify-center min-h-screen bg-transparent text-slate-200 relative z-10"
+      className="flex flex-col items-center justify-center min-h-screen pt-32 bg-transparent text-slate-200 relative z-10"
     >
       {/* Foto Profil */}
       <motion.div
@@ -25,7 +25,7 @@ function Home() {
         transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <img
-          src="/img/circle.png"
+          src="/img/profileportormv.png"
           alt="Profile"
           className="block w-full h-full object-cover bg-transparent"
         />
