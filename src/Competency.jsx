@@ -99,7 +99,7 @@ const competencies = [
     link: "https://karta-jati.vercel.app/"
   },
   {
-    title: "Cakranegara Heavy Rent",
+    title: "Cakranegara supported by Hacktiv8",
     description: "Cakranegara Heavy Rent for help ur Business Equipment with Gemini Studio Chatbot Integrated called 'Mas Cakra-bot' ",
     icons: [
       <SiAstro style={{ color: "#FF5D01", fontSize: "1.5rem" }} />,
@@ -291,7 +291,15 @@ const Card = ({ comp, index }) => {
             whileHover={{ color: "#60A5FA" }}
             transition={{ duration: 0.3 }}
           >
-            {comp.title}
+            {comp.title.includes("Hacktiv8") ? (
+              <>
+                {comp.title.split("Hacktiv8")[0]}
+                <span className="text-orange-500">Hacktiv8</span>
+                {comp.title.split("Hacktiv8")[1]}
+              </>
+            ) : (
+              comp.title
+            )}
           </motion.h3>
           {comp.certificateImage && (
             <button
@@ -299,7 +307,7 @@ const Card = ({ comp, index }) => {
               className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:text-slate-200 bg-white/5 hover:bg-white/10 border border-slate-500/50 rounded-lg transition-colors"
             >
               <FaCertificate className="text-sm" />
-              View
+              Certified
             </button>
           )}
         </div>

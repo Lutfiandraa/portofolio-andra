@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./index.css";
 import Home from "./Home";
@@ -10,7 +10,7 @@ import LightLines from "./component/LightLines";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function App() {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
-          const scrollDifference = Math.abs(currentScrollY - lastScrollY);
+          const scrollDifference = Math.abs(currentScrollY - lastScrollY.current);
           
           // Threshold untuk menghindari flickering saat scroll kecil
           if (scrollDifference < 5) {
@@ -32,16 +32,16 @@ function App() {
           if (currentScrollY < 50) {
             setIsNavbarVisible(true);
           }
-          // Jika scroll ke bawah lebih dari 100px, hide navbar
-          else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          // Jika scroll ke bawah, hide navbar
+          else if (currentScrollY > lastScrollY.current) {
             setIsNavbarVisible(false);
           } 
           // Jika scroll ke atas, show navbar
-          else if (currentScrollY < lastScrollY) {
+          else if (currentScrollY < lastScrollY.current) {
             setIsNavbarVisible(true);
           }
           
-          setLastScrollY(currentScrollY);
+          lastScrollY.current = currentScrollY;
           ticking = false;
         });
         ticking = true;
@@ -50,7 +50,7 @@ function App() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <LightLines

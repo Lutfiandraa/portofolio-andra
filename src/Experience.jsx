@@ -46,10 +46,10 @@ export default function Experience() {
                   type="button"
                   onClick={() => setCertificateOpen(true)}
                   className="absolute top-4 right-4 inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:text-slate-200 bg-white/5 hover:bg-white/10 border border-slate-500/50 rounded-lg transition-colors"
-                  aria-label="View certificate"
+                  aria-label="Certified"
                 >
                   <FaCertificate className="text-sm" />
-                  View
+                  Certified
                 </button>
               )}
               <div className="flex items-start space-x-4">

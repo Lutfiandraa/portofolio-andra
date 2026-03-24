@@ -3,6 +3,10 @@ import TypedText from "./component/TypedText";
 import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+const TYPED_STRINGS = [
+  `<span class="block text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-cyan-400 font-bold text-4xl drop-shadow-lg">Hi, I’m Lutfiandra Pohan</span>`,
+];
+
 function Home() {
   return (
     <section
@@ -83,11 +87,7 @@ function Home() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
       >
-        <TypedText
-          strings={[
-            `<span class="block text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-cyan-400 font-bold text-4xl drop-shadow-lg">Hi, I’m Lutfiandra Pohan</span>`,
-          ]}
-        />
+        <TypedText strings={TYPED_STRINGS} />
       </motion.div>
 
       {/* Deskripsi */}
