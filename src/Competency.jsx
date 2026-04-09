@@ -69,7 +69,7 @@ const competencies = [
       <SiTypescript style={{ color: "#3178C6", fontSize: "1.5rem" }} />,
       <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
     ],
-    images: ["/img/charcoaldefault.jpg", "/img/OOCLshipping.jpg"],
+    images: ["/img/Royalmerchant.png", "/img/OOCLshipping.jpg"],
     link: "https://royalmerchant.vercel.app/"
   },
   {
@@ -84,7 +84,7 @@ const competencies = [
         style={{ width: "30px", height: "30px" }}
       />,
     ],
-    images: ["/img/safetybackground.png", "/img/workplace-safety-priority.jpg"],
+    images: ["/img/SistemPelaporan.png", "/img/workplace-safety-priority.jpg"],
     link: "https://sistem-kesehatan-dan-kesalamatan-ke.vercel.app/"
   },
   {
@@ -119,7 +119,7 @@ const competencies = [
         style={{ width: "30px", height: "30px" }}
       />,
     ],
-    images: ["/img/Collision.png", "/img/defender.png"],
+    images: ["/img/workflow.png", "/img/defender.png", "/img/Collision.png"],
     link: "https://github.com/Lutfiandraa/CollisionWarning-YOLO",
     category: "computer-vision",
   },
