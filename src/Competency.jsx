@@ -100,14 +100,16 @@ const competencies = [
   },
   {
     title: "Cakranegara supported by Hacktiv8",
-    description: "Cakranegara Heavy Rent for help ur Business Equipment with Gemini Studio Chatbot Integrated called 'Mas Cakra-bot' ",
+    description: "Solve ur Business Equipment & Requirement with our AI Chatbot Integrated called 'Mas Cakra-bot'",
     icons: [
       <SiAstro style={{ color: "#FF5D01", fontSize: "1.5rem" }} />,
       <SiTypescript style={{ color: "#3178C6", fontSize: "1.5rem" }} />,
       <SiReact style={{ color: "#61DAFB", fontSize: "1.5rem" }} />,
     ],
     images: ["/img/excapillar.png", "/img/cakrabot.png"],
-    link: "https://cakranegara-equipment.vercel.app/"
+    link: "https://cakranegara-equipment.vercel.app/",
+    certificateImage: "/img/Hacktiv8MajubarengAI.jpg",
+    certificateDescription: "Maju Bareng AI by Hacktiv8. · October 2025\n\nSuccessfully completed the Maju Bareng AI program by Hacktiv8, focusing on integrating Google Gemini AI and Studio for innovative business solutions like the Mas Cakra-bot."
   },
   {
     title: "YOLOv8",
